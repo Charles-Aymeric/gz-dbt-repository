@@ -13,7 +13,7 @@ raw_sales as (
         orders_id,
         pdt_id as products_id,
         revenue,
-        quantity
+        CAST(quantity AS FLOAT64) AS quantity
 
     from source
 
