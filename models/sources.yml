@@ -7,7 +7,26 @@ sources:
     tables:
       - name: product
         identifier: raw_gz_product
+        description: all the products that are sold by greenweez 
+        columns:
+          - name: products_id
+            description: primary_key of the table
+            tests:
+              - unique
       - name: ship
         identifier: raw_gz_ship
+        description: the shipping for all the orders
+        columns:
+          - name: orders_id
+            description: ID of the orders
+            tests:
+              - unique
       - name: sales
         identifier: raw_gz_sales
+        description: sales of GW
+
+models:
+  - name: sales
+    tests:
+    - unique:
+        column_name: "(products_id||'-'||orders_id)"
