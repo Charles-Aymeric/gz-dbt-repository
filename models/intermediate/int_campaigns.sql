@@ -1,5 +1,11 @@
 SELECT *
-FROM {{ref('bing')}}
+FROM {{ref('stg_raw__bing')}}
 UNION ALL 
 SELECT *
-FROM {{ref('facebook', 'product', 'adwords')}}
+FROM {{ref('stg_raw__facebook')}}
+UNION ALL
+SELECT *
+FROM {{ref('stg_raw__product')}} 
+UNION ALL
+SELECT *
+FROM {{ref('stg_raw__adwords')}}
