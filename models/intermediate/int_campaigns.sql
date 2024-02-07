@@ -1,3 +1,5 @@
 SELECT *
-FROM {{ref('stg_raw__bing', 'stg_raw__facebook', 'stg_raw__product', 'stg_raw__adwords')}}
+FROM {{ref('bing')}}
 UNION ALL 
+SELECT *
+FROM {{ref('facebook', 'product', 'adwords')}}
